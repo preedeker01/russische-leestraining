@@ -16,10 +16,10 @@ button{font:inherit;touch-action:manipulation}.screen{display:none;width:100%;he
 .home-head{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px}
 .home h1{margin:0;color:var(--blue);font-size:clamp(1.7rem,6.1vw,3.4rem);line-height:1.0;text-align:left;font-weight:800}
 .home-sub{font-size:clamp(.72rem,2.5vw,.95rem);color:#65708a;text-align:right;max-width:42%;line-height:1.2}
-.home-buttons{flex:1;min-height:0;display:grid;grid-template-columns:1fr;grid-template-rows:repeat(6,minmax(0,1fr));gap:7px}
-.home-choice{border:1px solid rgba(0,0,0,.10);border-radius:19px;color:white;font-weight:800;display:grid;grid-template-columns:minmax(98px,30%) 1fr;align-items:center;gap:10px;padding:5px 13px;min-height:0;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.home-buttons{flex:1;min-height:0;display:grid;grid-template-columns:1fr;grid-template-rows:repeat(7,minmax(0,1fr));gap:5px}
+.home-choice{border:1px solid rgba(0,0,0,.10);border-radius:16px;color:white;font-weight:800;display:grid;grid-template-columns:minmax(98px,30%) 1fr;align-items:center;gap:8px;padding:3px 11px;min-height:0;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,.08)}
 .home-choice .label{text-align:left;font-size:clamp(1.02rem,4.1vw,1.65rem);line-height:1.02}.tiles{display:flex;justify-content:flex-end;gap:5px}.tile{min-width:30px;height:31px;padding:0 4px;border-radius:7px;background:rgba(255,255,255,.92);color:#22345e;display:flex;align-items:center;justify-content:center;font-size:clamp(.9rem,3.6vw,1.32rem);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
-.green{background:#2dbd51}.blue{background:#2d9bf0}.orange{background:#ff7a2d}.purple{background:#7143d8}.red{background:#e84f64}.teal{background:#19a89d}
+.green{background:#2dbd51}.blue{background:#2d9bf0}.orange{background:#ff7a2d}.purple{background:#7143d8}.red{background:#e84f64}.teal{background:#19a89d}.gold{background:#c78b13}
 .data-status{font-size:.68rem;text-align:center;color:#70798d;min-height:.82rem;line-height:1}
 /* Exercise */
 .exercise{height:100dvh;max-width:1000px;margin:auto;padding:6px 8px;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto auto;gap:5px;background:var(--bg)}
@@ -28,10 +28,73 @@ button{font:inherit;touch-action:manipulation}.screen{display:none;width:100%;he
 .controls{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.controls button,.translate{border:1px solid #c6ccda;border-radius:10px;background:#fff;min-width:0;font-weight:700;font-size:clamp(.68rem,2.7vw,.92rem);padding:5px 2px;line-height:1.05;cursor:pointer}.controls button{min-height:43px}.translate{width:100%;min-height:35px}.translate.on{background:#1976d2;color:#fff;border-color:#1976d2;outline:2px solid #0d55a8}
 .global-home{position:fixed;z-index:10;right:8px;top:max(6px,env(safe-area-inset-top));width:45px;height:39px;border-radius:11px;border:1px solid #bbc4d6;background:#fff;color:#123487;font-size:1.45rem;font-weight:800;cursor:pointer}
 /* progressively smaller words */
-.len4 .item{font-size:clamp(1.45rem,5.6vh,2.8rem)}.len5 .item{font-size:clamp(1.28rem,5.1vh,2.5rem)}.len6 .item{font-size:clamp(1.12rem,4.7vh,2.18rem)}.len7 .item{font-size:clamp(.98rem,4.3vh,1.95rem);letter-spacing:-.02em}
+.len4 .item{font-size:clamp(1.45rem,5.6vh,2.8rem)}.len5 .item{font-size:clamp(1.12rem,4.55vh,2.18rem)}.len6 .item{font-size:clamp(.98rem,4.15vh,1.92rem)}.len7 .item{font-size:clamp(.86rem,3.8vh,1.68rem);letter-spacing:-.01em}
 .update-box{position:fixed;z-index:999;left:10px;right:10px;bottom:10px;max-width:520px;margin:auto;background:#fff;border:2px solid #123487;border-radius:14px;padding:10px 12px;box-shadow:0 4px 20px #0003;display:none;align-items:center;gap:10px}.update-box span{flex:1;font-weight:700}.update-box button{background:#1976d2;color:#fff;border:0;border-radius:9px;padding:9px 12px;font-weight:800}
 .loading-overlay{position:fixed;z-index:500;inset:0;background:#ffffffed;display:none;align-items:center;justify-content:center;text-align:center;padding:24px}.loading-card{max-width:430px}.loading-card h2{color:#123487}.spinner{width:42px;height:42px;margin:16px auto;border:5px solid #d7dce8;border-top-color:#123487;border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
-@media(orientation:landscape){.home{max-width:1000px;padding:7px 12px;gap:5px}.home-head{min-height:45px}.home h1{font-size:clamp(1.45rem,4.1vh,2.35rem)}.home-sub{font-size:.7rem}.home-buttons{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,minmax(0,1fr));gap:6px 8px}.home-choice{border-radius:15px;padding:3px 11px;grid-template-columns:minmax(110px,42%) 1fr}.home-choice .label{font-size:clamp(.9rem,3.2vh,1.25rem)}.tile{height:26px;min-width:26px;font-size:clamp(.78rem,3.2vh,1.05rem)}.data-status{font-size:.62rem}.exercise{grid-template-rows:auto auto minmax(0,1fr) auto auto;gap:3px;padding:3px 7px}.exercise h1{font-size:clamp(1rem,4.1vh,1.55rem);margin-top:0}.hint{font-size:clamp(.63rem,2.7vh,.82rem)}.grid{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,minmax(0,1fr));gap:4px}.item{font-size:clamp(1.25rem,7.1vh,2.45rem)}.len4 .item{font-size:clamp(1.16rem,6.6vh,2.25rem)}.len5 .item{font-size:clamp(1.05rem,6.1vh,2.05rem)}.len6 .item{font-size:clamp(.96rem,5.7vh,1.85rem)}.len7 .item{font-size:clamp(.86rem,5.25vh,1.65rem)}.controls button{min-height:33px;padding:2px;font-size:clamp(.58rem,2.7vh,.78rem)}.translate{min-height:28px;padding:2px;font-size:clamp(.6rem,2.8vh,.8rem)}.global-home{width:39px;height:32px;font-size:1.2rem;top:3px}}
+
+.sentence-grid{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(4,minmax(0,1fr));gap:7px;min-height:0}
+.sentence-item{border:2px solid #cad0df;border-radius:12px;background:#fff;color:#162a5d;font-size:clamp(.92rem,3.6vw,1.55rem);font-weight:700;padding:4px 8px;min-width:0;overflow:hidden;line-height:1.08;text-align:center;cursor:pointer;white-space:normal}
+.sentence-item.active{text-decoration:underline;border-color:#5170bc}.sentence-item.correct{outline:4px solid #34b865;outline-offset:-4px}.sentence-item.wrong{outline:4px solid #d94848;outline-offset:-4px}
+@media(orientation:landscape){.home{max-width:1000px;padding:7px 12px;gap:5px}.home-head{min-height:45px}.home h1{font-size:clamp(1.45rem,4.1vh,2.35rem)}.home-sub{font-size:.7rem}.home-buttons{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(4,minmax(0,1fr));gap:4px 7px}.home-choice{border-radius:15px;padding:3px 11px;grid-template-columns:minmax(110px,42%) 1fr}.home-choice .label{font-size:clamp(.9rem,3.2vh,1.25rem)}.tile{height:26px;min-width:26px;font-size:clamp(.78rem,3.2vh,1.05rem)}.data-status{font-size:.62rem}.exercise{grid-template-rows:auto auto minmax(0,1fr) auto auto;gap:3px;padding:3px 7px}.exercise h1{font-size:clamp(1rem,4.1vh,1.55rem);margin-top:0}.hint{font-size:clamp(.63rem,2.7vh,.82rem)}.grid{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,minmax(0,1fr));gap:4px}.item{font-size:clamp(1.25rem,7.1vh,2.45rem)}.len4 .item{font-size:clamp(1.16rem,6.6vh,2.25rem)}.len5 .item{font-size:clamp(.94rem,5.4vh,1.82rem)}.len6 .item{font-size:clamp(.84rem,4.95vh,1.62rem)}.len7 .item{font-size:clamp(.75rem,4.55vh,1.45rem)}.controls button{min-height:33px;padding:2px;font-size:clamp(.58rem,2.7vh,.78rem)}.translate{min-height:28px;padding:2px;font-size:clamp(.6rem,2.8vh,.8rem)}.global-home{width:39px;height:32px;font-size:1.2rem;top:3px}.sentence-grid{gap:4px}.sentence-item{font-size:clamp(.78rem,3.5vh,1.15rem);padding:2px 6px}.sentence-home{grid-column:1/-1;max-width:50%;width:100%;justify-self:center}}
+
+.data-row{display:flex;align-items:center;justify-content:center;gap:7px;min-height:20px}
+.refresh-list{border:1px solid #bcc4d3;border-radius:8px;background:#fff;color:#26375f;font-size:.68rem;font-weight:700;padding:3px 7px;cursor:pointer;white-space:nowrap}
+.permission-overlay{position:fixed;inset:0;background:rgba(0,0,0,.42);display:none;align-items:center;justify-content:center;z-index:10000;padding:16px}
+.permission-card{width:min(92vw,460px);background:#fff;border-radius:18px;padding:18px;box-shadow:0 12px 38px rgba(0,0,0,.28);color:#17233e}
+.permission-card h2{margin:0 0 10px;font-size:1.22rem}.permission-card p{margin:0 0 10px;line-height:1.35;font-size:.94rem}
+.permission-card .source{font-size:.76rem;color:#52617d;overflow-wrap:anywhere;background:#f4f6fa;border-radius:8px;padding:7px}
+.permission-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}
+.permission-actions button{border:1px solid #bbc4d5;border-radius:10px;padding:10px 6px;font-weight:800;font-size:.9rem;cursor:pointer;background:#fff}
+.permission-actions .allow{background:#1f66d1;color:#fff;border-color:#1f66d1}
+@media(orientation:landscape){.data-row{min-height:17px}.refresh-list{font-size:.6rem;padding:2px 6px}.permission-card{padding:14px}.permission-card p{font-size:.82rem}}
+
+
+/* Nederlandse vertaling direct op alle Russische woordknoppen */
+.item.word-with-translation{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;line-height:1.0;overflow:hidden
+}
+.item .word-main{display:block;font-size:1em;line-height:1.0}
+.item .word-translation{
+  display:block;width:100%;font-size:50%;line-height:1.05;font-weight:600;
+  color:#596274;white-space:normal;overflow-wrap:anywhere;text-align:center
+}
+@media(orientation:landscape){
+  .item.word-with-translation{gap:2px}
+  .item .word-translation{font-size:50%}
+}
+
+
+/* Nederlandse vertaling direct onder alle Russische zinnen */
+.sentence-item.sentence-with-translation{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  overflow:hidden;
+}
+.sentence-item .sentence-main{
+  display:block;
+  font-size:1em;
+  line-height:1.08;
+}
+.sentence-item .sentence-translation{
+  display:block;
+  width:100%;
+  font-size:50%;
+  line-height:1.05;
+  font-weight:600;
+  color:#596274;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  text-align:center;
+}
+@media (orientation:landscape){
+  .sentence-item.sentence-with-translation{gap:2px}
+  .sentence-item .sentence-translation{font-size:50%}
+}
+
 </style>
 </head>
 <body>
@@ -44,22 +107,38 @@ button{font:inherit;touch-action:manipulation}.screen{display:none;width:100%;he
     <button class="home-choice purple" onclick="openWords(5)"><span class="label">5 letters</span><span class="tiles"><span class="tile">в</span><span class="tile">р</span><span class="tile">е</span><span class="tile">м</span><span class="tile">я</span></span></button>
     <button class="home-choice red" onclick="openWords(6)"><span class="label">6 letters</span><span class="tiles"><span class="tile">р</span><span class="tile">а</span><span class="tile">б</span><span class="tile">о</span><span class="tile">т</span><span class="tile">а</span></span></button>
     <button class="home-choice teal" onclick="openWords(7)"><span class="label">7 letters</span><span class="tiles"><span class="tile">х</span><span class="tile">о</span><span class="tile">р</span><span class="tile">о</span><span class="tile">ш</span><span class="tile">и</span><span class="tile">й</span></span></button>
+    <button class="home-choice gold sentence-home" onclick="openSentences()"><span class="label">Korte zinnen</span><span class="tiles"><span class="tile">Я</span><span class="tile">иду</span><span class="tile">домой</span></span></button>
   </div>
-  <div id="dataStatus" class="data-status">Woordenlijst voorbereiden…</div>
+  <div class="data-row"><div id="dataStatus" class="data-status">Woordenlijst voorbereiden…</div><button id="refreshWords" class="refresh-list" type="button">↻ Woordenlijst verversen</button></div>
 </div></section>
 
 <section id="lettersScreen" class="screen"><button class="global-home" onclick="showScreen('homeScreen')" title="Start">⌂</button><div class="exercise"><h1>Russische letters</h1><p id="lettersHint" class="hint">Tik op een letter om hem 3× te horen.</p><div id="lettersGrid" class="grid"></div><div class="controls"><button id="lettersPlay">▶<br>Voorbeeld</button><button id="lettersStop">■<br>Stop</button><button id="lettersMix">↻<br>Mengen</button><button id="lettersSearch">🔎<br>Zoeken</button></div><button id="lettersTranslate" class="translate" style="visibility:hidden">Vertalen</button></div></section>
 
 <section id="wordsScreen" class="screen"><button class="global-home" onclick="showScreen('homeScreen')" title="Start">⌂</button><div id="wordExercise" class="exercise"><h1 id="wordTitle">Russische woorden</h1><p id="wordHint" class="hint">Tik op een woord om het 3× te horen.</p><div id="wordGrid" class="grid"></div><div class="controls"><button id="wordPlay">▶<br>Voorbeeld</button><button id="wordStop">■<br>Stop</button><button id="wordMix">↻<br>Mengen</button><button id="wordSearch">🔎<br>Zoeken</button></div><button id="wordTranslate" class="translate">🌐 Vertalen</button></div></section>
 
+<section id="sentencesScreen" class="screen"><button class="global-home" onclick="showScreen('homeScreen')" title="Start">⌂</button><div class="exercise"><h1>Korte Russische zinnen</h1><p id="sentenceHint" class="hint">Tik op een zin om hem 3× te horen.</p><div id="sentenceGrid" class="sentence-grid"></div><div class="controls"><button id="sentencePlay">▶<br>Voorbeeld</button><button id="sentenceStop">■<br>Stop</button><button id="sentenceMix">↻<br>Mengen</button><button id="sentenceSearch">🔎<br>Zoeken</button></div><button id="sentenceTranslate" class="translate">🌐 Vertalen</button></div></section>
+
 <div id="loadingOverlay" class="loading-overlay"><div class="loading-card"><h2>Woordenlijst voorbereiden</h2><div class="spinner"></div><p id="loadingText">De meest gebruikte Russische woorden worden geladen. Dit is vooral bij de eerste keer nodig.</p></div></div>
+
+<div id="permissionOverlay" class="permission-overlay" role="dialog" aria-modal="true" aria-labelledby="permissionTitle">
+  <div class="permission-card">
+    <h2 id="permissionTitle">Internetverbinding nodig</h2>
+    <p id="permissionText"></p>
+    <div class="source">Bron: raw.githubusercontent.com (GitHub). De app haalt alleen de Russische frequentielijst en, indien nodig, de Nederlandse vertalingen op.</div>
+    <div class="permission-actions">
+      <button id="permissionCancel" type="button">Niet nu</button>
+      <button id="permissionAllow" class="allow" type="button">Toestaan en ophalen</button>
+    </div>
+  </div>
+</div>
+
 <div id="updateBox" class="update-box"><span>Nieuwe versie beschikbaar</span><button id="updateBtn">Bijwerken</button></div>
 <audio id="goodSound" src="SpeechOn.wav" preload="auto"></audio><audio id="badSound" src="SpeechOff.wav" preload="auto"></audio>
 <script>
 const FREQ_URL='https://raw.githubusercontent.com/hingston/russian/master/50000-russian-words-cyrillic-only.txt';
 const DICT_URL='https://raw.githubusercontent.com/open-dict-data/wikidict-nl/master/data/ru-nl_wiki.txt';
-const DATA_KEY='russianReadingDataV2';
-const TRANS_KEY='russianReadingTranslationsV2';
+const DATA_KEY='russianReadingDataV3';
+const TRANS_KEY='russianReadingTranslationsV3';
 const lengths=[3,4,5,6,7];
 let wordData=null, translations={}, dictLoading=false;
 const coreTranslations={
@@ -73,41 +152,129 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 function playSound(id){const a=document.getElementById(id);try{a.currentTime=0;a.play().catch(()=>{})}catch(e){}}
 function setStatus(t){document.getElementById('dataStatus').textContent=t}
 
-async function ensureWordData(showOverlay=false){
- if(wordData && lengths.every(n=>wordData[n]?.length===400)) return true;
- try{const cached=JSON.parse(localStorage.getItem(DATA_KEY)||'null');if(cached&&lengths.every(n=>cached[n]?.length===400)){wordData=cached;setStatus('2.000 Russische woorden gereed');loadTranslationsInBackground();return true}}catch(e){}
- if(showOverlay) document.getElementById('loadingOverlay').style.display='flex';
- try{
-   setStatus('Frequentielijst laden…');
-   const r=await fetch(FREQ_URL,{cache:'no-store'}); if(!r.ok) throw new Error('frequentielijst '+r.status);
-   const lines=(await r.text()).split(/\r?\n/).map(x=>x.trim().toLowerCase());
-   const out={3:[],4:[],5:[],6:[],7:[]}, seen={3:new Set(),4:new Set(),5:new Set(),6:new Set(),7:new Set()};
-   for(const w of lines){const n=cpLen(w);if(!lengths.includes(n)||!isRussianWord(w)||seen[n].has(w)||out[n].length>=400)continue;seen[n].add(w);out[n].push(w);if(lengths.every(k=>out[k].length===400))break}
-   if(!lengths.every(n=>out[n].length===400)) throw new Error('Niet genoeg woorden gevonden: '+lengths.map(n=>n+':'+out[n].length).join(', '));
-   wordData=out;localStorage.setItem(DATA_KEY,JSON.stringify(out));setStatus('2.000 Russische woorden gereed');loadTranslationsInBackground();return true;
- }catch(e){console.error(e);setStatus('Woordenlijst niet geladen – internet nodig bij de eerste keer');alert('De Russische woordenlijst kon niet worden geladen. Controleer de internetverbinding en probeer opnieuw.');return false}
- finally{document.getElementById('loadingOverlay').style.display='none'}
+
+function hasCompleteWordData(d){return !!(d&&lengths.every(n=>d[n]?.length===400))}
+function getCachedWords(){try{const c=JSON.parse(localStorage.getItem(DATA_KEY)||'null');return hasCompleteWordData(c)?c:null}catch(e){return null}}
+function getCachedTranslations(){try{return JSON.parse(localStorage.getItem(TRANS_KEY)||'null')||null}catch(e){return null}}
+
+function askNetworkPermission(mode='first'){
+ return new Promise(resolve=>{
+  const ov=document.getElementById('permissionOverlay');
+  const txt=document.getElementById('permissionText');
+  const allow=document.getElementById('permissionAllow');
+  const cancel=document.getElementById('permissionCancel');
+  txt.textContent=mode==='refresh'
+   ? 'De woordenlijst is al op dit apparaat opgeslagen. Wil je nu via internet controleren en de Russische woordenlijst en vertalingen opnieuw ophalen?'
+   : 'De Russische woordenlijst staat nog niet op dit apparaat. Wil je nu via internet 2.000 veelgebruikte Russische woorden ophalen waarvan ook een Nederlandse vertaling beschikbaar is (400 per woordlengte)? Daarna gebruikt de app de opgeslagen woorden en vertalingen lokaal.';
+  ov.style.display='flex';
+  const finish=v=>{ov.style.display='none';allow.onclick=null;cancel.onclick=null;resolve(v)};
+  allow.onclick=()=>finish(true);
+  cancel.onclick=()=>finish(false);
+ });
 }
 
-async function loadTranslationsInBackground(){
- if(dictLoading)return;dictLoading=true;
- try{const cached=JSON.parse(localStorage.getItem(TRANS_KEY)||'null');if(cached){Object.assign(translations,cached);dictLoading=false;return}}catch(e){}
- if(!wordData){dictLoading=false;return}
+async function downloadWordData(showOverlay=true){
+ if(showOverlay)document.getElementById('loadingOverlay').style.display='flex';
  try{
-   const wanted=new Set(lengths.flatMap(n=>wordData[n]));
-   const r=await fetch(DICT_URL);if(!r.ok)throw new Error('woordenboek '+r.status);
-   const txt=await r.text();const found={};
-   for(const line of txt.split(/\r?\n/)){
-     const tab=line.indexOf('\t');if(tab<1)continue;
-     const ru=line.slice(0,tab).trim().toLowerCase();if(!wanted.has(ru))continue;
-     let nl=line.slice(tab+1).trim();if(!nl||nl.length>80||/^(categorie|sjabloon|bestand):/i.test(nl))continue;
-     (found[ru]??=[]).push(nl);
-   }
-   const compact={};for(const [ru,vals] of Object.entries(found)){const uniq=[...new Set(vals)].slice(0,3);if(uniq.length)compact[ru]=uniq.join(' of ')}
-   Object.assign(translations,compact);localStorage.setItem(TRANS_KEY,JSON.stringify(compact));
+  setStatus('Frequentielijst laden…');
+  const rf=await fetch(FREQ_URL,{cache:'no-store'});if(!rf.ok)throw new Error('frequentielijst '+rf.status);
+  const freq=(await rf.text()).split(/\r?\n/).map(x=>x.trim().toLowerCase())
+    .filter(w=>lengths.includes(cpLen(w))&&isRussianWord(w));
+
+  setStatus('Nederlandse vertalingen laden…');
+  const rd=await fetch(DICT_URL,{cache:'no-store'});if(!rd.ok)throw new Error('woordenboek '+rd.status);
+  const wanted=new Set(freq);
+  const found={...coreTranslations};
+
+  for(const line of (await rd.text()).split(/\r?\n/)){
+   const tab=line.indexOf('\t');if(tab<1)continue;
+   const ru=line.slice(0,tab).trim().toLowerCase();
+   if(!wanted.has(ru))continue;
+   let nl=line.slice(tab+1).trim();
+   if(!nl||nl.length>80||/^(categorie|sjabloon|bestand):/i.test(nl))continue;
+   if(found[ru]){
+    const vals=found[ru].split(' of ');
+    if(!vals.includes(nl)&&vals.length<3)found[ru]+=' of '+nl;
+   }else found[ru]=nl;
+  }
+
+  setStatus('Woorden met vertaling selecteren…');
+  const out={3:[],4:[],5:[],6:[],7:[]};
+  const seen={3:new Set(),4:new Set(),5:new Set(),6:new Set(),7:new Set()};
+  const compact={};
+
+  for(const w of freq){
+   const n=cpLen(w);
+   if(out[n].length>=400||seen[n].has(w))continue;
+   const tr=found[w];
+   if(!tr||tr==='—')continue;
+   seen[n].add(w);
+   out[n].push(w);
+   compact[w]=tr;
+   if(lengths.every(k=>out[k].length===400))break;
+  }
+
+  if(!lengths.every(n=>out[n].length===400)){
+   const aantallen=lengths.map(n=>n+': '+out[n].length).join(', ');
+   throw new Error('Niet genoeg woorden mét vertaling gevonden ('+aantallen+')');
+  }
+
+  wordData=out;
+  translations={...compact};
+  localStorage.setItem(DATA_KEY,JSON.stringify(out));
+  localStorage.setItem(TRANS_KEY,JSON.stringify(compact));
+  setStatus('2.000 Russische woorden met vertaling gereed');
+  if(translateMode&&document.getElementById('wordsScreen')?.classList.contains('active'))renderWords();
+  return true;
+ }catch(e){
+  console.error(e);setStatus('Woordenlijst niet geladen');
+  alert('De Russische woordenlijst met Nederlandse vertalingen kon niet volledig worden geladen. Controleer de internetverbinding en probeer opnieuw.');
+  return false;
+ }finally{document.getElementById('loadingOverlay').style.display='none'}
+}
+
+async function loadTranslations(allowNetwork=false,force=false){
+ if(dictLoading)return;
+ const cached=getCachedTranslations();
+ if(cached&&!force){Object.assign(translations,cached);return}
+ if(!allowNetwork||!wordData)return;
+ dictLoading=true;
+ try{
+  const wanted=new Set(lengths.flatMap(n=>wordData[n]));
+  const r=await fetch(DICT_URL,{cache:force?'no-store':'default'});if(!r.ok)throw new Error('woordenboek '+r.status);
+  const txt=await r.text(),found={};
+  for(const line of txt.split(/\r?\n/)){
+   const tab=line.indexOf('\t');if(tab<1)continue;
+   const ru=line.slice(0,tab).trim().toLowerCase();if(!wanted.has(ru))continue;
+   let nl=line.slice(tab+1).trim();if(!nl||nl.length>80||/^(categorie|sjabloon|bestand):/i.test(nl))continue;
+   (found[ru]??=[]).push(nl);
+  }
+  const compact={};for(const [ru,vals] of Object.entries(found)){const uniq=[...new Set(vals)].slice(0,3);if(uniq.length)compact[ru]=uniq.join(' of ')}
+  translations={...compact};localStorage.setItem(TRANS_KEY,JSON.stringify(compact));if(translateMode&&document.getElementById('wordsScreen')?.classList.contains('active'))renderWords();
  }catch(e){console.warn('Vertaalwoordenboek kon niet volledig worden geladen',e)}
  finally{dictLoading=false}
 }
+
+async function ensureWordData(showOverlay=false){
+ if(hasCompleteWordData(wordData)){await loadTranslations(false,false);return true}
+ const cached=getCachedWords();
+ if(cached){wordData=cached;setStatus('2.000 Russische woorden gereed');await loadTranslations(false,false);return true}
+ const ok=await askNetworkPermission('first');
+ if(!ok){setStatus('Woordenlijst nog niet opgehaald');return false}
+ const loaded=await downloadWordData(showOverlay);
+ return loaded;
+}
+
+async function refreshWordData(){
+ const ok=await askNetworkPermission('refresh');
+ if(!ok)return;
+ const loaded=await downloadWordData(true);
+ if(loaded){
+  setStatus('Woordenlijst en vertalingen ververst');
+  setTimeout(()=>setStatus('2.000 Russische woorden met vertaling gereed'),2200);
+ }
+}
+document.getElementById('refreshWords').addEventListener('click',refreshWordData);
 
 let russianVoice=null,dutchVoice=null;
 function chooseVoices(){const v=speechSynthesis.getVoices();russianVoice=v.find(x=>(x.lang||'').toLowerCase()==='ru-ru')||v.find(x=>(x.lang||'').toLowerCase().startsWith('ru'))||v.find(x=>/russian|рус/i.test(x.name||''))||null;dutchVoice=v.find(x=>(x.lang||'').toLowerCase()==='nl-nl')||v.find(x=>(x.lang||'').toLowerCase().startsWith('nl'))||v.find(x=>/dutch|nederlands/i.test(x.name||''))||null}
@@ -115,7 +282,7 @@ chooseVoices();speechSynthesis.addEventListener('voiceschanged',chooseVoices);
 function speakRussian(t){return new Promise(r=>{const u=new SpeechSynthesisUtterance(t);u.lang='ru-RU';if(russianVoice)u.voice=russianVoice;u.rate=.58;u.pitch=1;u.onend=r;u.onerror=r;speechSynthesis.speak(u)})}
 function speakDutch(t){return new Promise(r=>{const u=new SpeechSynthesisUtterance(t);u.lang='nl-NL';if(dutchVoice)u.voice=dutchVoice;u.rate=.58;u.pitch=1;u.onend=r;u.onerror=r;speechSynthesis.speak(u)})}
 async function speakThree(t){speechSynthesis.cancel();await sleep(70);for(let i=0;i<3;i++){if(globalStopped)break;await speakRussian(t);if(i<2&&!globalStopped)await sleep(230)}}
-function showScreen(id){speechSynthesis.cancel();globalStopped=true;stopLetterSearch();stopWordSearch();document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active')}
+function showScreen(id){speechSynthesis.cancel();globalStopped=true;stopLetterSearch();stopWordSearch();stopSentenceSearch();document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active')}
 let globalStopped=false;
 
 /* letters */
@@ -136,10 +303,10 @@ let currentLen=3,wordCurrent=[],wordTarget=null,wordLast=null,wordSearch=false,t
 function stopWordSearch(){wordSearch=false;wordTarget=null}
 function mixWords(){wordCurrent=shuffle(wordData[currentLen]).slice(0,12);renderWords()}
 function clearWordMarks(){document.querySelectorAll('#wordGrid .item').forEach(b=>b.classList.remove('active','correct','wrong'))}
-function renderWords(){const g=document.getElementById('wordGrid');g.innerHTML='';wordCurrent.forEach(w=>{const b=document.createElement('button');b.className='item';b.dataset.v=w;b.textContent=Math.random()<.18?w[0].toUpperCase()+w.slice(1):w;b.onclick=()=>wordTap(w,b);g.appendChild(b)})}
+function renderWords(){const g=document.getElementById('wordGrid');g.innerHTML='';wordCurrent.forEach(w=>{const b=document.createElement('button');b.className='item';b.dataset.v=w;const shown=Math.random()<.18?w[0].toUpperCase()+w.slice(1):w;const main=document.createElement('span');main.className='word-main';main.textContent=shown;b.appendChild(main);if(translateMode){b.classList.add('word-with-translation');const tr=document.createElement('span');tr.className='word-translation';tr.textContent=translations[w]||'vertaling ontbreekt';b.appendChild(tr)}b.onclick=()=>wordTap(w,b);g.appendChild(b)})}
 async function openWords(n){currentLen=n;if(!(await ensureWordData(true)))return;const ex=document.getElementById('wordExercise');ex.className='exercise len'+n;document.getElementById('wordTitle').textContent='Russische woorden van '+n+' letters';translateMode=false;document.getElementById('wordTranslate').classList.remove('on');stopWordSearch();globalStopped=true;mixWords();document.getElementById('wordHint').textContent='Tik op een woord om het 3× te horen.';showScreen('wordsScreen')}
 async function wordTap(w,b){
- if(translateMode){speechSynthesis.cancel();const tr=translations[w];if(tr){document.getElementById('wordHint').textContent=w+' = '+tr;await speakDutch(tr)}else if(dictLoading){document.getElementById('wordHint').textContent='Vertalingen worden nog geladen…'}else{document.getElementById('wordHint').textContent=w+' = vertaling niet beschikbaar'}return}
+ if(translateMode){speechSynthesis.cancel();const tr=translations[w];if(tr){document.getElementById('wordHint').textContent=w+' = '+tr}else if(dictLoading){document.getElementById('wordHint').textContent='Vertalingen worden nog geladen…'}else{document.getElementById('wordHint').textContent=w+' = vertaling niet beschikbaar'}await speakRussian(w);return}
  if(wordSearch){if(w===wordTarget){playSound('goodSound');b.classList.add('correct');await sleep(360);if(wordSearch)offerWord()}else{playSound('badSound');b.classList.add('wrong');setTimeout(()=>b.classList.remove('wrong'),420)}return}
  globalStopped=false;clearWordMarks();b.classList.add('active');await speakThree(w);b.classList.remove('active')
 }
@@ -148,12 +315,52 @@ document.getElementById('wordPlay').onclick=async()=>{translateMode=false;docume
 document.getElementById('wordStop').onclick=()=>{globalStopped=true;speechSynthesis.cancel();stopWordSearch();clearWordMarks();document.getElementById('wordHint').textContent='Gestopt.'}
 document.getElementById('wordMix').onclick=()=>{globalStopped=true;speechSynthesis.cancel();stopWordSearch();mixWords();document.getElementById('wordHint').textContent=translateMode?'Vertalen staat aan: tik op een woord.':'Tik op een woord om het 3× te horen.'}
 document.getElementById('wordSearch').onclick=async()=>{translateMode=false;document.getElementById('wordTranslate').classList.remove('on');speechSynthesis.cancel();clearWordMarks();if(wordSearch&&wordTarget){globalStopped=false;document.getElementById('wordHint').textContent='Luister nog eens en zoek hetzelfde woord.';await sleep(70);await speakRussian(wordTarget);return}stopWordSearch();wordSearch=true;wordLast=null;await offerWord()}
-document.getElementById('wordTranslate').onclick=()=>{speechSynthesis.cancel();globalStopped=true;stopWordSearch();clearWordMarks();translateMode=!translateMode;document.getElementById('wordTranslate').classList.toggle('on',translateMode);document.getElementById('wordHint').textContent=translateMode?'Vertalen staat aan: tik op een woord.':'Tik op een woord om het 3× te horen.'}
+document.getElementById('wordTranslate').onclick=()=>{speechSynthesis.cancel();globalStopped=true;stopWordSearch();clearWordMarks();translateMode=!translateMode;document.getElementById('wordTranslate').classList.toggle('on',translateMode);renderWords();document.getElementById('wordHint').textContent=translateMode?'Vertalen staat aan: Nederlandse vertalingen staan onder de woorden.':'Tik op een woord om het 3× te horen.'}
+
+
+/* short beginner sentences: 300 items, maximum 7 Russian words */
+const sentenceData=[{"ru":"Привет!","nl":"Hallo!"},{"ru":"Здравствуйте!","nl":"Hallo!"},{"ru":"Доброе утро!","nl":"Goedemorgen!"},{"ru":"Добрый день!","nl":"Goedendag!"},{"ru":"Добрый вечер!","nl":"Goedenavond!"},{"ru":"До свидания!","nl":"Tot ziens!"},{"ru":"Пока!","nl":"Dag!"},{"ru":"До завтра!","nl":"Tot morgen!"},{"ru":"Спасибо!","nl":"Dank je!"},{"ru":"Пожалуйста!","nl":"Alsjeblieft!"},{"ru":"Извините!","nl":"Pardon!"},{"ru":"Извини!","nl":"Sorry!"},{"ru":"Да.","nl":"Ja."},{"ru":"Нет.","nl":"Nee."},{"ru":"Хорошо.","nl":"Goed."},{"ru":"Очень хорошо.","nl":"Heel goed."},{"ru":"Всё хорошо.","nl":"Alles is goed."},{"ru":"Как дела?","nl":"Hoe gaat het?"},{"ru":"Как ваши дела?","nl":"Hoe gaat het met u?"},{"ru":"Как тебя зовут?","nl":"Hoe heet jij?"},{"ru":"Как вас зовут?","nl":"Hoe heet u?"},{"ru":"Меня зовут Анна.","nl":"Ik heet Anna."},{"ru":"Меня зовут Иван.","nl":"Ik heet Ivan."},{"ru":"Очень приятно.","nl":"Aangenaam."},{"ru":"Я не понимаю.","nl":"Ik begrijp het niet."},{"ru":"Я понимаю.","nl":"Ik begrijp het."},{"ru":"Я немного понимаю.","nl":"Ik begrijp een beetje."},{"ru":"Я не знаю.","nl":"Ik weet het niet."},{"ru":"Я знаю.","nl":"Ik weet het."},{"ru":"Повторите, пожалуйста.","nl":"Herhaal alstublieft."},{"ru":"Говорите медленнее, пожалуйста.","nl":"Spreek langzamer alstublieft."},{"ru":"Что это?","nl":"Wat is dit?"},{"ru":"Кто это?","nl":"Wie is dit?"},{"ru":"Где это?","nl":"Waar is dit?"},{"ru":"Почему?","nl":"Waarom?"},{"ru":"Когда?","nl":"Wanneer?"},{"ru":"Как?","nl":"Hoe?"},{"ru":"Сколько это стоит?","nl":"Hoeveel kost dit?"},{"ru":"Где туалет?","nl":"Waar is het toilet?"},{"ru":"Где выход?","nl":"Waar is de uitgang?"},{"ru":"Где вход?","nl":"Waar is de ingang?"},{"ru":"Помогите, пожалуйста.","nl":"Help alstublieft."},{"ru":"Мне нужна помощь.","nl":"Ik heb hulp nodig."},{"ru":"Идите сюда.","nl":"Kom hierheen."},{"ru":"Подождите, пожалуйста.","nl":"Wacht alstublieft."},{"ru":"Я говорю по-русски.","nl":"Ik spreek Russisch."},{"ru":"Я плохо говорю по-русски.","nl":"Ik spreek slecht Russisch."},{"ru":"Вы говорите по-английски?","nl":"Spreekt u Engels?"},{"ru":"Я из Нидерландов.","nl":"Ik kom uit Nederland."},{"ru":"Я живу в Нидерландах.","nl":"Ik woon in Nederland."},{"ru":"Это мама.","nl":"Dit is moeder."},{"ru":"Мама здесь.","nl":"Moeder is hier."},{"ru":"Мама дома.","nl":"Moeder is thuis."},{"ru":"Это папа.","nl":"Dit is vader."},{"ru":"Папа здесь.","nl":"Vader is hier."},{"ru":"Папа дома.","nl":"Vader is thuis."},{"ru":"Это брат.","nl":"Dit is broer."},{"ru":"Брат здесь.","nl":"Broer is hier."},{"ru":"Брат дома.","nl":"Broer is thuis."},{"ru":"Это сестра.","nl":"Dit is zus."},{"ru":"Сестра здесь.","nl":"Zus is hier."},{"ru":"Сестра дома.","nl":"Zus is thuis."},{"ru":"Это сын.","nl":"Dit is zoon."},{"ru":"Сын здесь.","nl":"Zoon is hier."},{"ru":"Сын дома.","nl":"Zoon is thuis."},{"ru":"Это дочь.","nl":"Dit is dochter."},{"ru":"Дочь здесь.","nl":"Dochter is hier."},{"ru":"Дочь дома.","nl":"Dochter is thuis."},{"ru":"Это друг.","nl":"Dit is vriend."},{"ru":"Друг здесь.","nl":"Vriend is hier."},{"ru":"Друг дома.","nl":"Vriend is thuis."},{"ru":"Это подруга.","nl":"Dit is vriendin."},{"ru":"Подруга здесь.","nl":"Vriendin is hier."},{"ru":"Подруга дома.","nl":"Vriendin is thuis."},{"ru":"Это врач.","nl":"Dit is arts."},{"ru":"Врач здесь.","nl":"Arts is hier."},{"ru":"Врач дома.","nl":"Arts is thuis."},{"ru":"Это учитель.","nl":"Dit is leraar."},{"ru":"Учитель здесь.","nl":"Leraar is hier."},{"ru":"Учитель дома.","nl":"Leraar is thuis."},{"ru":"Это студент.","nl":"Dit is student."},{"ru":"Студент здесь.","nl":"Student is hier."},{"ru":"Студент дома.","nl":"Student is thuis."},{"ru":"Это ребёнок.","nl":"Dit is kind."},{"ru":"Ребёнок здесь.","nl":"Kind is hier."},{"ru":"Ребёнок дома.","nl":"Kind is thuis."},{"ru":"У меня есть дом.","nl":"Ik heb huis."},{"ru":"Где дом?","nl":"Waar is huis?"},{"ru":"У меня есть машина.","nl":"Ik heb auto."},{"ru":"Где машина?","nl":"Waar is auto?"},{"ru":"У меня есть телефон.","nl":"Ik heb telefoon."},{"ru":"Где телефон?","nl":"Waar is telefoon?"},{"ru":"У меня есть книга.","nl":"Ik heb boek."},{"ru":"Где книга?","nl":"Waar is boek?"},{"ru":"У меня есть кошка.","nl":"Ik heb kat."},{"ru":"Где кошка?","nl":"Waar is kat?"},{"ru":"У меня есть собака.","nl":"Ik heb hond."},{"ru":"Где собака?","nl":"Waar is hond?"},{"ru":"У меня есть билет.","nl":"Ik heb kaartje."},{"ru":"Где билет?","nl":"Waar is kaartje?"},{"ru":"У меня есть карта.","nl":"Ik heb kaart."},{"ru":"Где карта?","nl":"Waar is kaart?"},{"ru":"У меня есть ключ.","nl":"Ik heb sleutel."},{"ru":"Где ключ?","nl":"Waar is sleutel?"},{"ru":"У меня есть сумка.","nl":"Ik heb tas."},{"ru":"Где сумка?","nl":"Waar is tas?"},{"ru":"У меня есть вода.","nl":"Ik heb water."},{"ru":"Где вода?","nl":"Waar is water?"},{"ru":"У меня есть чай.","nl":"Ik heb thee."},{"ru":"Где чай?","nl":"Waar is thee?"},{"ru":"У меня есть кофе.","nl":"Ik heb koffie."},{"ru":"Где кофе?","nl":"Waar is koffie?"},{"ru":"У меня есть хлеб.","nl":"Ik heb brood."},{"ru":"Где хлеб?","nl":"Waar is brood?"},{"ru":"У меня есть молоко.","nl":"Ik heb melk."},{"ru":"Где молоко?","nl":"Waar is melk?"},{"ru":"У меня есть время.","nl":"Ik heb tijd."},{"ru":"Где время?","nl":"Waar is tijd?"},{"ru":"У меня есть работа.","nl":"Ik heb werk."},{"ru":"Где работа?","nl":"Waar is werk?"},{"ru":"У меня есть вопрос.","nl":"Ik heb vraag."},{"ru":"Где вопрос?","nl":"Waar is vraag?"},{"ru":"У меня есть деньги.","nl":"Ik heb geld."},{"ru":"Где деньги?","nl":"Waar is geld?"},{"ru":"У меня есть ручка.","nl":"Ik heb pen."},{"ru":"Где ручка?","nl":"Waar is pen?"},{"ru":"Я хочу воду.","nl":"Ik wil water."},{"ru":"Я хочу чай.","nl":"Ik wil thee."},{"ru":"Я хочу кофе.","nl":"Ik wil koffie."},{"ru":"Я хочу хлеб.","nl":"Ik wil brood."},{"ru":"Я хочу суп.","nl":"Ik wil soep."},{"ru":"Я хочу билет.","nl":"Ik wil een kaartje."},{"ru":"Я хочу такси.","nl":"Ik wil een taxi."},{"ru":"Я хочу врача.","nl":"Ik wil een arts."},{"ru":"Я хочу домой.","nl":"Ik wil naar huis."},{"ru":"Я хочу спать.","nl":"Ik wil slapen."},{"ru":"Я хочу есть.","nl":"Ik wil eten."},{"ru":"Я хочу пить.","nl":"Ik wil drinken."},{"ru":"Я хочу отдохнуть.","nl":"Ik wil uitrusten."},{"ru":"Я ем хлеб.","nl":"Ik eet brood."},{"ru":"Я ем суп.","nl":"Ik eet soep."},{"ru":"Я ем рис.","nl":"Ik eet rijst."},{"ru":"Я ем сыр.","nl":"Ik eet kaas."},{"ru":"Я ем банан.","nl":"Ik eet een banaan."},{"ru":"Я ем салат.","nl":"Ik eet salade."},{"ru":"Я ем яблоко.","nl":"Ik eet een appel."},{"ru":"Я ем мясо.","nl":"Ik eet vlees."},{"ru":"Я ем рыбу.","nl":"Ik eet vis."},{"ru":"Я пью воду.","nl":"Ik drink water."},{"ru":"Я пью чай.","nl":"Ik drink thee."},{"ru":"Я пью кофе.","nl":"Ik drink koffie."},{"ru":"Я пью молоко.","nl":"Ik drink melk."},{"ru":"Я пью сок.","nl":"Ik drink sap."},{"ru":"Я люблю кофе.","nl":"Ik hou van koffie."},{"ru":"Я люблю чай.","nl":"Ik hou van thee."},{"ru":"Я люблю музыку.","nl":"Ik hou van muziek."},{"ru":"Я люблю спорт.","nl":"Ik hou van sport."},{"ru":"Я люблю кино.","nl":"Ik hou van film."},{"ru":"Я люблю книги.","nl":"Ik hou van boeken."},{"ru":"Я люблю кошек.","nl":"Ik hou van katten."},{"ru":"Я люблю собак.","nl":"Ik hou van honden."},{"ru":"Я люблю море.","nl":"Ik hou van de zee."},{"ru":"Я люблю лето.","nl":"Ik hou van de zomer."},{"ru":"Я люблю зиму.","nl":"Ik hou van de winter."},{"ru":"Я люблю русский язык.","nl":"Ik hou van de Russische taal."},{"ru":"Я дома.","nl":"Ik ben thuis."},{"ru":"Он дома.","nl":"Hij is thuis."},{"ru":"Она дома.","nl":"Zij is thuis."},{"ru":"Я на работе.","nl":"Ik ben op het werk."},{"ru":"Он на работе.","nl":"Hij is op het werk."},{"ru":"Она на работе.","nl":"Zij is op het werk."},{"ru":"Я в школе.","nl":"Ik ben op school."},{"ru":"Он в школе.","nl":"Hij is op school."},{"ru":"Она в школе.","nl":"Zij is op school."},{"ru":"Я в магазине.","nl":"Ik ben in de winkel."},{"ru":"Он в магазине.","nl":"Hij is in de winkel."},{"ru":"Она в магазине.","nl":"Zij is in de winkel."},{"ru":"Я в кафе.","nl":"Ik ben in het café."},{"ru":"Он в кафе.","nl":"Hij is in het café."},{"ru":"Она в кафе.","nl":"Zij is in het café."},{"ru":"Я в парке.","nl":"Ik ben in het park."},{"ru":"Он в парке.","nl":"Hij is in het park."},{"ru":"Она в парке.","nl":"Zij is in het park."},{"ru":"Я в городе.","nl":"Ik ben in de stad."},{"ru":"Он в городе.","nl":"Hij is in de stad."},{"ru":"Она в городе.","nl":"Zij is in de stad."},{"ru":"Я в гостинице.","nl":"Ik ben in het hotel."},{"ru":"Он в гостинице.","nl":"Hij is in het hotel."},{"ru":"Она в гостинице.","nl":"Zij is in het hotel."},{"ru":"Я в машине.","nl":"Ik ben in de auto."},{"ru":"Он в машине.","nl":"Hij is in de auto."},{"ru":"Она в машине.","nl":"Zij is in de auto."},{"ru":"Я на улице.","nl":"Ik ben op straat."},{"ru":"Он на улице.","nl":"Hij is op straat."},{"ru":"Она на улице.","nl":"Zij is op straat."},{"ru":"Я иду домой.","nl":"Ik ga naar huis."},{"ru":"Я иду в магазин.","nl":"Ik ga naar de winkel."},{"ru":"Я иду в школу.","nl":"Ik ga naar school."},{"ru":"Я иду на работу.","nl":"Ik ga naar het werk."},{"ru":"Я иду в кафе.","nl":"Ik ga naar het café."},{"ru":"Я иду в парк.","nl":"Ik ga naar het park."},{"ru":"Я иду в центр.","nl":"Ik ga naar het centrum."},{"ru":"Я иду в гостиницу.","nl":"Ik ga naar het hotel."},{"ru":"Я работаю.","nl":"Ik werk."},{"ru":"Я учусь.","nl":"Ik studeer."},{"ru":"Я читаю.","nl":"Ik lees."},{"ru":"Я пишу.","nl":"Ik schrijf."},{"ru":"Я слушаю музыку.","nl":"Ik luister naar muziek."},{"ru":"Я смотрю телевизор.","nl":"Ik kijk televisie."},{"ru":"Я готовлю ужин.","nl":"Ik maak avondeten."},{"ru":"Я завтракаю.","nl":"Ik ontbijt."},{"ru":"Я обедаю.","nl":"Ik lunch."},{"ru":"Я ужинаю.","nl":"Ik eet avondeten."},{"ru":"Я отдыхаю.","nl":"Ik rust uit."},{"ru":"Я сплю.","nl":"Ik slaap."},{"ru":"Я встаю рано.","nl":"Ik sta vroeg op."},{"ru":"Я ложусь поздно.","nl":"Ik ga laat naar bed."},{"ru":"Я принимаю душ.","nl":"Ik douche."},{"ru":"Я открываю дверь.","nl":"Ik open de deur."},{"ru":"Я закрываю окно.","nl":"Ik sluit het raam."},{"ru":"Я жду автобус.","nl":"Ik wacht op de bus."},{"ru":"Я еду на автобусе.","nl":"Ik ga met de bus."},{"ru":"Я еду на машине.","nl":"Ik ga met de auto."},{"ru":"Я хожу пешком.","nl":"Ik ga te voet."},{"ru":"Сегодня понедельник.","nl":"Vandaag is het maandag."},{"ru":"Сегодня вторник.","nl":"Vandaag is het dinsdag."},{"ru":"Сегодня среда.","nl":"Vandaag is het woensdag."},{"ru":"Сегодня четверг.","nl":"Vandaag is het donderdag."},{"ru":"Сегодня пятница.","nl":"Vandaag is het vrijdag."},{"ru":"Сегодня суббота.","nl":"Vandaag is het zaterdag."},{"ru":"Сегодня воскресенье.","nl":"Vandaag is het zondag."},{"ru":"Сегодня тепло.","nl":"Vandaag is het warm."},{"ru":"Сегодня холодно.","nl":"Vandaag is het koud."},{"ru":"Сегодня дождь.","nl":"Vandaag regent het."},{"ru":"Сегодня солнце.","nl":"Vandaag schijnt de zon."},{"ru":"Сейчас утро.","nl":"Het is nu ochtend."},{"ru":"Сейчас день.","nl":"Het is nu overdag."},{"ru":"Сейчас вечер.","nl":"Het is nu avond."},{"ru":"Сейчас ночь.","nl":"Het is nu nacht."},{"ru":"Мне холодно.","nl":"Ik heb het koud."},{"ru":"Мне жарко.","nl":"Ik heb het warm."},{"ru":"Мне хорошо.","nl":"Ik voel me goed."},{"ru":"Мне плохо.","nl":"Ik voel me niet goed."},{"ru":"Я устал.","nl":"Ik ben moe."},{"ru":"Я устала.","nl":"Ik ben moe."},{"ru":"Я голоден.","nl":"Ik heb honger."},{"ru":"Я голодна.","nl":"Ik heb honger."},{"ru":"Это дом.","nl":"Dit is een huis."},{"ru":"Это машина.","nl":"Dit is een auto."},{"ru":"Это книга.","nl":"Dit is een boek."},{"ru":"Это стол.","nl":"Dit is een tafel."},{"ru":"Это стул.","nl":"Dit is een stoel."},{"ru":"Это окно.","nl":"Dit is een raam."},{"ru":"Это дверь.","nl":"Dit is een deur."},{"ru":"Это магазин.","nl":"Dit is een winkel."},{"ru":"Это школа.","nl":"Dit is een school."},{"ru":"Это кафе.","nl":"Dit is een café."},{"ru":"Это автобус.","nl":"Dit is een bus."},{"ru":"Это поезд.","nl":"Dit is een trein."},{"ru":"Дом большой.","nl":"Het huis is groot."},{"ru":"Дом маленький.","nl":"Het huis is klein."},{"ru":"Машина новая.","nl":"De auto is nieuw."},{"ru":"Машина старая.","nl":"De auto is oud."},{"ru":"Книга интересная.","nl":"Het boek is interessant."},{"ru":"Чай горячий.","nl":"De thee is heet."},{"ru":"Вода холодная.","nl":"Het water is koud."},{"ru":"Снег белый.","nl":"Sneeuw is wit."},{"ru":"Небо синее.","nl":"De lucht is blauw."},{"ru":"Трава зелёная.","nl":"Het gras is groen."},{"ru":"Я беру это.","nl":"Ik neem dit."},{"ru":"Мне нравится это.","nl":"Ik vind dit leuk."},{"ru":"Это дорого.","nl":"Dit is duur."},{"ru":"Это дёшево.","nl":"Dit is goedkoop."},{"ru":"У вас есть вода?","nl":"Heeft u water?"},{"ru":"У вас есть кофе?","nl":"Heeft u koffie?"},{"ru":"У вас есть хлеб?","nl":"Heeft u brood?"},{"ru":"Дайте воду, пожалуйста.","nl":"Geef water alstublieft."},{"ru":"Дайте чай, пожалуйста.","nl":"Geef thee alstublieft."},{"ru":"Дайте кофе, пожалуйста.","nl":"Geef koffie alstublieft."},{"ru":"Счёт, пожалуйста.","nl":"De rekening alstublieft."},{"ru":"Можно меню?","nl":"Mag ik de menukaart?"},{"ru":"Я хочу заказать.","nl":"Ik wil bestellen."},{"ru":"Без сахара, пожалуйста.","nl":"Zonder suiker alstublieft."},{"ru":"Без молока, пожалуйста.","nl":"Zonder melk alstublieft."},{"ru":"Один кофе, пожалуйста.","nl":"Eén koffie alstublieft."},{"ru":"Один чай, пожалуйста.","nl":"Eén thee alstublieft."},{"ru":"Два билета, пожалуйста.","nl":"Twee kaartjes alstublieft."},{"ru":"Где автобусная остановка?","nl":"Waar is de bushalte?"},{"ru":"Где вокзал?","nl":"Waar is het station?"},{"ru":"Где метро?","nl":"Waar is de metro?"},{"ru":"Где гостиница?","nl":"Waar is het hotel?"},{"ru":"Где магазин?","nl":"Waar is de winkel?"},{"ru":"Где аптека?","nl":"Waar is de apotheek?"},{"ru":"Где больница?","nl":"Waar is het ziekenhuis?"},{"ru":"Идите прямо.","nl":"Ga rechtdoor."},{"ru":"Поверните налево.","nl":"Sla linksaf."},{"ru":"Поверните направо.","nl":"Sla rechtsaf."},{"ru":"Это далеко?","nl":"Is het ver?"},{"ru":"Это близко?","nl":"Is het dichtbij?"},{"ru":"Я ищу вокзал.","nl":"Ik zoek het station."}];
+let sentenceCurrent=[],sentenceTarget=null,sentenceLast=null,sentenceSearch=false,sentenceTranslateMode=false;
+function stopSentenceSearch(){sentenceSearch=false;sentenceTarget=null}
+function mixSentences(){sentenceCurrent=shuffle(sentenceData).slice(0,4);renderSentences()}
+function clearSentenceMarks(){document.querySelectorAll('#sentenceGrid .sentence-item').forEach(b=>b.classList.remove('active','correct','wrong'))}
+function renderSentences(){
+ const g=document.getElementById('sentenceGrid');g.innerHTML='';
+ sentenceCurrent.forEach(x=>{
+  const b=document.createElement('button');b.className='sentence-item';b.dataset.v=x.ru;
+  const main=document.createElement('span');main.className='sentence-main';main.textContent=x.ru;b.appendChild(main);
+  if(sentenceTranslateMode){
+   b.classList.add('sentence-with-translation');
+   const tr=document.createElement('span');tr.className='sentence-translation';tr.textContent=x.nl;b.appendChild(tr);
+  }
+  b.onclick=()=>sentenceTap(x,b);g.appendChild(b)
+ })
+}
+function openSentences(){
+ sentenceTranslateMode=false;document.getElementById('sentenceTranslate').classList.remove('on');
+ stopSentenceSearch();globalStopped=true;mixSentences();
+ document.getElementById('sentenceHint').textContent='Tik op een zin om hem 3× te horen.';
+ showScreen('sentencesScreen')
+}
+async function sentenceTap(x,b){
+ if(sentenceTranslateMode){speechSynthesis.cancel();document.getElementById('sentenceHint').textContent=x.ru+' = '+x.nl;await speakRussian(x.ru);return}
+ if(sentenceSearch){if(x.ru===sentenceTarget){playSound('goodSound');b.classList.add('correct');await sleep(360);if(sentenceSearch)offerSentence()}else{playSound('badSound');b.classList.add('wrong');setTimeout(()=>b.classList.remove('wrong'),420)}return}
+ globalStopped=false;clearSentenceMarks();b.classList.add('active');await speakThree(x.ru);b.classList.remove('active')
+}
+async function offerSentence(){
+ clearSentenceMarks();let choices=sentenceCurrent.filter(x=>x.ru!==sentenceLast);const x=choices[Math.floor(Math.random()*choices.length)]||sentenceCurrent[0];
+ sentenceTarget=x.ru;sentenceLast=x.ru;document.getElementById('sentenceHint').textContent='Luister en tik de juiste zin.';globalStopped=false;await sleep(70);if(sentenceSearch)await speakRussian(sentenceTarget)
+}
+document.getElementById('sentencePlay').onclick=async()=>{sentenceTranslateMode=false;document.getElementById('sentenceTranslate').classList.remove('on');renderSentences();stopSentenceSearch();globalStopped=false;clearSentenceMarks();document.getElementById('sentenceHint').textContent='Voorbeeld speelt af…';for(const x of sentenceCurrent){if(globalStopped)break;const b=[...document.querySelectorAll('#sentenceGrid .sentence-item')].find(q=>q.dataset.v===x.ru);if(b)b.classList.add('active');await speakRussian(x.ru);if(b)b.classList.remove('active');await sleep(120)}if(!globalStopped)document.getElementById('sentenceHint').textContent='Tik op een zin om hem 3× te horen.'}
+document.getElementById('sentenceStop').onclick=()=>{globalStopped=true;speechSynthesis.cancel();stopSentenceSearch();clearSentenceMarks();document.getElementById('sentenceHint').textContent='Gestopt.'}
+document.getElementById('sentenceMix').onclick=()=>{globalStopped=true;speechSynthesis.cancel();stopSentenceSearch();mixSentences();document.getElementById('sentenceHint').textContent=sentenceTranslateMode?'Vertalen staat aan: tik op een zin.':'Tik op een zin om hem 3× te horen.'}
+document.getElementById('sentenceSearch').onclick=async()=>{sentenceTranslateMode=false;document.getElementById('sentenceTranslate').classList.remove('on');renderSentences();speechSynthesis.cancel();clearSentenceMarks();if(sentenceSearch&&sentenceTarget){globalStopped=false;document.getElementById('sentenceHint').textContent='Luister nog eens en zoek dezelfde zin.';await sleep(70);await speakRussian(sentenceTarget);return}stopSentenceSearch();sentenceSearch=true;sentenceLast=null;await offerSentence()}
+document.getElementById('sentenceTranslate').onclick=()=>{speechSynthesis.cancel();globalStopped=true;stopSentenceSearch();clearSentenceMarks();sentenceTranslateMode=!sentenceTranslateMode;document.getElementById('sentenceTranslate').classList.toggle('on',sentenceTranslateMode);renderSentences();document.getElementById('sentenceHint').textContent=sentenceTranslateMode?'Vertalen staat aan: Nederlandse vertalingen staan onder de zinnen. Tik op een zin voor Russische uitspraak.':'Tik op een zin om hem 3× te horen.'}
 
 /* PWA updates */
 if('serviceWorker'in navigator){let reg;navigator.serviceWorker.register('./service-worker.js').then(r=>{reg=r;if(r.waiting)showUpdate(r.waiting);r.addEventListener('updatefound',()=>{const nw=r.installing;if(!nw)return;nw.addEventListener('statechange',()=>{if(nw.state==='installed'&&navigator.serviceWorker.controller)showUpdate(nw)})})});let refreshing=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});function showUpdate(worker){document.getElementById('updateBox').style.display='flex';document.getElementById('updateBtn').onclick=()=>worker.postMessage({type:'SKIP_WAITING'})}}
 
 /* start loading without blocking homepage */
-try{const c=JSON.parse(localStorage.getItem(DATA_KEY)||'null');if(c&&lengths.every(n=>c[n]?.length===400)){wordData=c;setStatus('2.000 Russische woorden gereed');loadTranslationsInBackground()}else ensureWordData(false)}catch(e){ensureWordData(false)}
+try{const c=getCachedWords();if(c){wordData=c;setStatus('2.000 Russische woorden gereed');const t=getCachedTranslations();if(t)Object.assign(translations,t)}else{setStatus('Woordenlijst nog niet opgehaald')}}catch(e){setStatus('Woordenlijst nog niet opgehaald')}
 </script>
 </body></html>

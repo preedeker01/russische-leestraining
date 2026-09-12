@@ -1,4 +1,4 @@
-const CACHE_NAME='russische-leestraining-v1';
+const CACHE_NAME='russische-leestraining-v9-zin-vertaling';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./icon.svg','./SpeechOn.wav','./SpeechOff.wav'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(ASSETS))));
 self.addEventListener('message',e=>{if(e.data&&e.data.type==='SKIP_WAITING')self.skipWaiting()});
