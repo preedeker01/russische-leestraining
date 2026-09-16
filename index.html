@@ -281,7 +281,7 @@ function chooseVoices(){const v=speechSynthesis.getVoices();russianVoice=v.find(
 chooseVoices();speechSynthesis.addEventListener('voiceschanged',chooseVoices);
 function speakRussian(t){return new Promise(r=>{const u=new SpeechSynthesisUtterance(t);u.lang='ru-RU';if(russianVoice)u.voice=russianVoice;u.rate=.58;u.pitch=1;u.onend=r;u.onerror=r;speechSynthesis.speak(u)})}
 function speakDutch(t){return new Promise(r=>{const u=new SpeechSynthesisUtterance(t);u.lang='nl-NL';if(dutchVoice)u.voice=dutchVoice;u.rate=.58;u.pitch=1;u.onend=r;u.onerror=r;speechSynthesis.speak(u)})}
-async function speakThree(t){speechSynthesis.cancel();await sleep(70);for(let i=0;i<3;i++){if(globalStopped)break;await speakRussian(t);if(i<2&&!globalStopped)await sleep(230)}}
+async function speakThree(t){const run=(speakThree._run=(speakThree._run||0)+1);speechSynthesis.cancel();await sleep(70);for(let i=0;i<3;i++){if(globalStopped||run!==speakThree._run)break;await speakRussian(t);if(i<2&&!globalStopped&&run===speakThree._run)await sleep(230)}}
 function showScreen(id){speechSynthesis.cancel();globalStopped=true;stopLetterSearch();stopWordSearch();stopSentenceSearch();document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active')}
 let globalStopped=false;
 
