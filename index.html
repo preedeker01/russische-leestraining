@@ -121,6 +121,25 @@ button{font:inherit;touch-action:manipulation}.screen{display:none;width:100%;he
 }
 </style>
 
+
+<style id="ru-sentence-fit-v12">
+#sentenceScreen .sentence-item{
+  padding:4px 8px!important;
+}
+#sentenceScreen .sentence-main{
+  font-size:clamp(1.15rem,4.6vw,2.15rem)!important;
+  line-height:1.05!important;
+}
+#sentenceScreen .sentence-translation{
+  font-size:clamp(.95rem,3.7vw,1.65rem)!important;
+  line-height:1.04!important;
+}
+@media (orientation:landscape){
+ #sentenceScreen .sentence-main{font-size:clamp(1.05rem,4.8vh,1.9rem)!important}
+ #sentenceScreen .sentence-translation{font-size:clamp(.88rem,3.9vh,1.45rem)!important}
+}
+</style>
+
 </head>
 <body>
 <section id="homeScreen" class="screen active"><div class="home">
@@ -438,8 +457,27 @@ try{const c=getCachedWords();if(c){wordData=c;setStatus('2.000 Russische woorden
  function fitAll(){
    document.querySelectorAll('#sixScreen .word-main,#sevenScreen .word-main').forEach(e=>fitText(e,14,32));
    document.querySelectorAll('#sixScreen .word-translation,#sevenScreen .word-translation').forEach(e=>fitText(e,11,22));
-   document.querySelectorAll('#sentenceScreen .sentence-main').forEach(e=>fitText(e,13,30));
-   document.querySelectorAll('#sentenceScreen .sentence-translation').forEach(e=>fitText(e,11,24));
+   document.querySelectorAll('#sentenceScreen .sentence-item').forEach(function(box){
+     const main=box.querySelector('.sentence-main');
+     const tr=box.querySelector('.sentence-translation');
+     if(!main && !tr)return;
+
+     // Begin groot. Alleen verkleinen wanneer de combinatie werkelijk niet past.
+     let mainSize=34, trSize=25, guard=80;
+     if(main) main.style.setProperty('font-size',mainSize+'px','important');
+     if(tr) tr.style.setProperty('font-size',trSize+'px','important');
+
+     while(guard--){
+       const overH=box.scrollHeight>box.clientHeight-2;
+       const overW=(main && main.scrollWidth>box.clientWidth-12) || (tr && tr.scrollWidth>box.clientWidth-12);
+       if(!overH && !overW)break;
+       if(mainSize>18)mainSize-=0.5;
+       if(trSize>14)trSize-=0.4;
+       if(main)main.style.setProperty('font-size',mainSize+'px','important');
+       if(tr)tr.style.setProperty('font-size',trSize+'px','important');
+       if(mainSize<=18 && trSize<=14)break;
+     }
+   });
    // Sommige oudere versies hebben tekst direct in de knop zonder aparte spans.
    document.querySelectorAll('#sixScreen .item:not(.word-with-translation),#sevenScreen .item:not(.word-with-translation)').forEach(e=>fitText(e,14,32));
  }
