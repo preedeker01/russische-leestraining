@@ -96,6 +96,31 @@ button{font:inherit;touch-action:manipulation}.screen{display:none;width:100%;he
 }
 
 </style>
+
+<style id="ru-auto-fit-v11">
+#sixScreen .item,#sevenScreen .item,
+#sentenceScreen .sentence-item{
+  min-width:0!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+}
+#sixScreen .item .word-main,#sevenScreen .item .word-main,
+#sixScreen .item .word-translation,#sevenScreen .item .word-translation,
+#sentenceScreen .sentence-main,#sentenceScreen .sentence-translation{
+  max-width:100%!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  box-sizing:border-box!important;
+}
+#sixScreen .item .word-main,#sevenScreen .item .word-main{
+  white-space:nowrap!important;
+}
+#sentenceScreen .sentence-main,#sentenceScreen .sentence-translation{
+  white-space:normal!important;
+}
+</style>
+
 </head>
 <body>
 <section id="homeScreen" class="screen active"><div class="home">
@@ -394,4 +419,40 @@ if('serviceWorker'in navigator){let reg;navigator.serviceWorker.register('./serv
 /* start loading without blocking homepage */
 try{const c=getCachedWords();if(c){wordData=c;setStatus('2.000 Russische woorden gereed');const t=getCachedTranslations();if(t)Object.assign(translations,t)}else{setStatus('Woordenlijst nog niet opgehaald')}}catch(e){setStatus('Woordenlijst nog niet opgehaald')}
 </script>
+
+<script id="ru-auto-fit-v11-js">
+(function(){
+ function fitText(el,minPx,maxPx){
+   if(!el || !el.parentElement)return;
+   el.style.fontSize=maxPx+'px';
+   let size=maxPx, guard=120;
+   const box=el.parentElement;
+   while(size>minPx && guard--){
+     const tooWide=el.scrollWidth>box.clientWidth-8;
+     const tooHigh=el.scrollHeight>Math.max(18,box.clientHeight-8);
+     if(!tooWide && !tooHigh)break;
+     size-=0.5;
+     el.style.fontSize=size+'px';
+   }
+ }
+ function fitAll(){
+   document.querySelectorAll('#sixScreen .word-main,#sevenScreen .word-main').forEach(e=>fitText(e,14,32));
+   document.querySelectorAll('#sixScreen .word-translation,#sevenScreen .word-translation').forEach(e=>fitText(e,11,22));
+   document.querySelectorAll('#sentenceScreen .sentence-main').forEach(e=>fitText(e,13,30));
+   document.querySelectorAll('#sentenceScreen .sentence-translation').forEach(e=>fitText(e,11,24));
+   // Sommige oudere versies hebben tekst direct in de knop zonder aparte spans.
+   document.querySelectorAll('#sixScreen .item:not(.word-with-translation),#sevenScreen .item:not(.word-with-translation)').forEach(e=>fitText(e,14,32));
+ }
+ const obs=new MutationObserver(()=>requestAnimationFrame(fitAll));
+ ['sixScreen','sevenScreen','sentenceScreen'].forEach(id=>{
+   const el=document.getElementById(id);
+   if(el)obs.observe(el,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['class']});
+ });
+ window.addEventListener('resize',()=>requestAnimationFrame(fitAll));
+ window.addEventListener('orientationchange',()=>setTimeout(fitAll,150));
+ document.addEventListener('DOMContentLoaded',fitAll);
+ setTimeout(fitAll,300);
+})();
+</script>
+
 </body></html>
