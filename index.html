@@ -158,6 +158,114 @@ button{font:inherit;touch-action:manipulation}.screen{display:none;width:100%;he
 }
 </style>
 
+
+<style id="ru-four-sentence-rows-v14">
+/* De vier keuzezinnen: duidelijk hogere regels en grotere tekst */
+#sentencesScreen .sentence-item,
+#sentencesScreen .item,
+#sentencesScreen .sentence-btn,
+#sentencesScreen button.sentence{
+  min-height:82px!important;
+  height:auto!important;
+  padding:7px 10px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+}
+
+/* Russische zin */
+#sentencesScreen .sentence-main,
+#sentencesScreen .sentence-item .ru,
+#sentencesScreen .sentence-item .main,
+#sentencesScreen .item .ru,
+#sentencesScreen .item .main{
+  font-size:36px!important;
+  line-height:1.05!important;
+  font-weight:700!important;
+}
+
+/* Vertaling: ook groter en leesbaar */
+#sentencesScreen .sentence-translation,
+#sentencesScreen .sentence-item .translation,
+#sentencesScreen .item .translation{
+  font-size:25px!important;
+  line-height:1.05!important;
+  margin-top:3px!important;
+}
+
+/* Als de vier zinnen gewone buttons zijn met directe tekst */
+#sentencesScreen .sentenceGrid button,
+#sentencesScreen .sentence-grid button,
+#sentencesScreen #sentenceGrid button{
+  min-height:82px!important;
+  height:auto!important;
+  font-size:36px!important;
+  line-height:1.05!important;
+  padding:7px 10px!important;
+}
+
+@media (max-height:760px){
+ #sentencesScreen .sentence-item,
+ #sentencesScreen .item,
+ #sentencesScreen .sentence-btn,
+ #sentencesScreen button.sentence,
+ #sentencesScreen .sentenceGrid button,
+ #sentencesScreen .sentence-grid button,
+ #sentencesScreen #sentenceGrid button{
+   min-height:68px!important;
+ }
+}
+</style>
+
+
+<style id="ru-layout-v15">
+/* Zonder woord-voor-woord: de 4 zinnen krijgen alle beschikbare ruimte */
+#sentencesScreen .exercise{
+  grid-template-rows:auto auto 0 minmax(0,1fr) auto auto!important;
+}
+
+/* Tijdens woord-voor-woord:
+   bovenste vak = hoogte van 2 gewone zinsregels
+   vier zinsregels samen = 4 gewone zinsregels */
+#sentencesScreen .exercise:has(#sentenceFocus.show){
+  grid-template-rows:auto auto minmax(0,2fr) minmax(0,4fr) auto auto!important;
+}
+
+/* Groot vak niet meer kunstmatig extreem hoog */
+#sentencesScreen #sentenceFocus.sentence-focus{
+  min-height:0!important;
+  height:100%!important;
+  margin:3px 0!important;
+  padding:5px 9px!important;
+}
+
+/* Vier regels vullen hun deel volledig */
+#sentencesScreen #sentenceGrid.sentence-grid{
+  height:100%!important;
+  min-height:0!important;
+  grid-template-rows:repeat(4,minmax(0,1fr))!important;
+  gap:6px!important;
+}
+
+#sentencesScreen #sentenceGrid .sentence-item{
+  min-height:0!important;
+  height:100%!important;
+  padding:4px 8px!important;
+}
+
+/* Grotere basisletters; de bestaande fit-code mag alleen verkleinen als nodig */
+#sentencesScreen #sentenceGrid .sentence-main{
+  font-size:40px!important;
+  line-height:1.02!important;
+}
+#sentencesScreen #sentenceGrid .sentence-translation{
+  font-size:27px!important;
+  line-height:1.02!important;
+}
+</style>
+
 </head>
 <body>
 <section id="homeScreen" class="screen active"><div class="home">
@@ -481,7 +589,7 @@ try{const c=getCachedWords();if(c){wordData=c;setStatus('2.000 Russische woorden
      if(!main && !tr)return;
 
      // Begin groot. Alleen verkleinen wanneer de combinatie werkelijk niet past.
-     let mainSize=34, trSize=25, guard=80;
+     let mainSize=42, trSize=29, guard=90;
      if(main) main.style.setProperty('font-size',mainSize+'px','important');
      if(tr) tr.style.setProperty('font-size',trSize+'px','important');
 
@@ -489,11 +597,11 @@ try{const c=getCachedWords();if(c){wordData=c;setStatus('2.000 Russische woorden
        const overH=box.scrollHeight>box.clientHeight-2;
        const overW=(main && main.scrollWidth>box.clientWidth-12) || (tr && tr.scrollWidth>box.clientWidth-12);
        if(!overH && !overW)break;
-       if(mainSize>18)mainSize-=0.5;
-       if(trSize>14)trSize-=0.4;
+       if(mainSize>24)mainSize-=0.5;
+       if(trSize>18)trSize-=0.4;
        if(main)main.style.setProperty('font-size',mainSize+'px','important');
        if(tr)tr.style.setProperty('font-size',trSize+'px','important');
-       if(mainSize<=18 && trSize<=14)break;
+       if(mainSize<=24 && trSize<=18)break;
      }
    });
    // Sommige oudere versies hebben tekst direct in de knop zonder aparte spans.
