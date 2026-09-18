@@ -220,49 +220,77 @@ button{font:inherit;touch-action:manipulation}.screen{display:none;width:100%;he
 </style>
 
 
-<style id="ru-layout-v15">
-/* Zonder woord-voor-woord: de 4 zinnen krijgen alle beschikbare ruimte */
+<style id="ru-correct-sentence-layout-v16">
+/* Alleen het scherm Korte Russische zinnen */
 #sentencesScreen .exercise{
-  grid-template-rows:auto auto 0 minmax(0,1fr) auto auto!important;
-}
-
-/* Tijdens woord-voor-woord:
-   bovenste vak = hoogte van 2 gewone zinsregels
-   vier zinsregels samen = 4 gewone zinsregels */
-#sentencesScreen .exercise:has(#sentenceFocus.show){
+  /* titel | uitleg | woord-voor-woord | vier zinnen | bedieningsknoppen | vertalen */
   grid-template-rows:auto auto minmax(0,2fr) minmax(0,4fr) auto auto!important;
+  gap:5px!important;
 }
 
-/* Groot vak niet meer kunstmatig extreem hoog */
+/* Groot woord-voor-woordvak: ongeveer twee zinsregels hoog */
 #sentencesScreen #sentenceFocus.sentence-focus{
   min-height:0!important;
   height:100%!important;
-  margin:3px 0!important;
-  padding:5px 9px!important;
+  margin:0!important;
+  padding:6px 10px!important;
 }
 
-/* Vier regels vullen hun deel volledig */
+/* Als woord-voor-woord niet actief is, neemt het geen ruimte in */
+#sentencesScreen #sentenceFocus.sentence-focus:not(.show){
+  display:none!important;
+}
+
+/* De vier GOEDE zinsknoppen */
 #sentencesScreen #sentenceGrid.sentence-grid{
-  height:100%!important;
-  min-height:0!important;
+  display:grid!important;
+  grid-template-columns:1fr!important;
   grid-template-rows:repeat(4,minmax(0,1fr))!important;
-  gap:6px!important;
-}
-
-#sentencesScreen #sentenceGrid .sentence-item{
   min-height:0!important;
   height:100%!important;
-  padding:4px 8px!important;
+  gap:7px!important;
 }
 
-/* Grotere basisletters; de bestaande fit-code mag alleen verkleinen als nodig */
-#sentencesScreen #sentenceGrid .sentence-main{
+/* Alleen de vier zinnen, NIET Voorbeeld/Stop/Mengen/Zoeken */
+#sentencesScreen #sentenceGrid > .sentence-item{
+  min-height:0!important;
+  height:100%!important;
+  padding:5px 9px!important;
   font-size:40px!important;
   line-height:1.02!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
 }
-#sentencesScreen #sentenceGrid .sentence-translation{
-  font-size:27px!important;
+#sentencesScreen #sentenceGrid > .sentence-item .sentence-main{
+  font-size:1em!important;
   line-height:1.02!important;
+}
+#sentencesScreen #sentenceGrid > .sentence-item .sentence-translation{
+  font-size:.62em!important;
+  line-height:1.03!important;
+  margin-top:3px!important;
+}
+
+/* Bedieningsknoppen terug naar normale hoogte */
+#sentencesScreen .controls{
+  height:auto!important;
+  min-height:0!important;
+}
+#sentencesScreen .controls button{
+  height:auto!important;
+  min-height:43px!important;
+  padding:5px 2px!important;
+}
+
+@media(orientation:landscape){
+ #sentencesScreen .exercise{
+   grid-template-rows:auto auto minmax(0,2fr) minmax(0,4fr) auto auto!important;
+   gap:3px!important;
+ }
+ #sentencesScreen #sentenceGrid.sentence-grid{gap:4px!important}
+ #sentencesScreen .controls button{min-height:33px!important;padding:2px!important}
 }
 </style>
 
@@ -589,7 +617,7 @@ try{const c=getCachedWords();if(c){wordData=c;setStatus('2.000 Russische woorden
      if(!main && !tr)return;
 
      // Begin groot. Alleen verkleinen wanneer de combinatie werkelijk niet past.
-     let mainSize=42, trSize=29, guard=90;
+     let mainSize=42, trSize=28, guard=90;
      if(main) main.style.setProperty('font-size',mainSize+'px','important');
      if(tr) tr.style.setProperty('font-size',trSize+'px','important');
 
@@ -597,7 +625,7 @@ try{const c=getCachedWords();if(c){wordData=c;setStatus('2.000 Russische woorden
        const overH=box.scrollHeight>box.clientHeight-2;
        const overW=(main && main.scrollWidth>box.clientWidth-12) || (tr && tr.scrollWidth>box.clientWidth-12);
        if(!overH && !overW)break;
-       if(mainSize>24)mainSize-=0.5;
+       if(mainSize>25)mainSize-=0.5;
        if(trSize>18)trSize-=0.4;
        if(main)main.style.setProperty('font-size',mainSize+'px','important');
        if(tr)tr.style.setProperty('font-size',trSize+'px','important');
